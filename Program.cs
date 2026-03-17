@@ -26,14 +26,20 @@ class Program
             Console.Write("Great! Now from 0 degrees to 90 degrees, at what angle do you want to shoot the ball with?: ");
             double angle = Convert.ToDouble(Console.ReadLine());
 
-                if (power * angle >= zTarget - 5 && power * angle <= zTarget + 5)
+            double shot = power * angle;
+
+                if (shot >= zTarget - 5 && shot <= zTarget + 5)
             {
                 Console.WriteLine("Nice shot you made it!");
                 break;
             }
-                else
+                else if (shot < zTarget - 5)
             {
-                    Console.WriteLine("You missed! Try again!");
+                Console.WriteLine("You airballed! Try Again.");
+            }
+                else if (shot > zTarget + 5 )
+            {
+                Console.WriteLine("You overshot! Try Again.");
             }
             
         }
