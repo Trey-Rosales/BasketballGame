@@ -1,0 +1,14 @@
+/Users/treyphiliprosales/csharp-projects/BasketballGame/bin/Debug/net10.0/BasketballGame
+/Users/treyphiliprosales/csharp-projects/BasketballGame/bin/Debug/net10.0/BasketballGame.deps.json
+/Users/treyphiliprosales/csharp-projects/BasketballGame/bin/Debug/net10.0/BasketballGame.runtimeconfig.json
+/Users/treyphiliprosales/csharp-projects/BasketballGame/bin/Debug/net10.0/BasketballGame.dll
+/Users/treyphiliprosales/csharp-projects/BasketballGame/bin/Debug/net10.0/BasketballGame.pdb
+/Users/treyphiliprosales/csharp-projects/BasketballGame/obj/Debug/net10.0/BasketballGame.GeneratedMSBuildEditorConfig.editorconfig
+/Users/treyphiliprosales/csharp-projects/BasketballGame/obj/Debug/net10.0/BasketballGame.AssemblyInfoInputs.cache
+/Users/treyphiliprosales/csharp-projects/BasketballGame/obj/Debug/net10.0/BasketballGame.AssemblyInfo.cs
+/Users/treyphiliprosales/csharp-projects/BasketballGame/obj/Debug/net10.0/BasketballGame.csproj.CoreCompileInputs.cache
+/Users/treyphiliprosales/csharp-projects/BasketballGame/obj/Debug/net10.0/BasketballGame.dll
+/Users/treyphiliprosales/csharp-projects/BasketballGame/obj/Debug/net10.0/refint/BasketballGame.dll
+/Users/treyphiliprosales/csharp-projects/BasketballGame/obj/Debug/net10.0/BasketballGame.pdb
+/Users/treyphiliprosales/csharp-projects/BasketballGame/obj/Debug/net10.0/BasketballGame.genruntimeconfig.cache
+/Users/treyphiliprosales/csharp-projects/BasketballGame/obj/Debug/net10.0/ref/BasketballGame.dll
