@@ -12,3 +12,4 @@
 /Users/treyphiliprosales/csharp-projects/BasketballGame/obj/Debug/net10.0/BasketballGame.pdb
 /Users/treyphiliprosales/csharp-projects/BasketballGame/obj/Debug/net10.0/BasketballGame.genruntimeconfig.cache
 /Users/treyphiliprosales/csharp-projects/BasketballGame/obj/Debug/net10.0/ref/BasketballGame.dll
+/Users/treyphiliprosales/csharp-projects/BasketballGame/obj/Debug/net10.0/BasketballGame.sourcelink.json
