@@ -13,9 +13,9 @@ class Program
 
         double zTarget = x + 2 * (y - 6);
 
-        Console.WriteLine("Welcome to the Bespin Basketball Game!");
+        Console.WriteLine("\n\nWelcome to the Bespin Basketball Game!\n");
 
-        Console.WriteLine($"The hoop is {hoopHeight} feet high and {distance} feet away. You are 6ft tall.");
+        Console.WriteLine($"\nThe hoop is {hoopHeight} feet high and {distance} feet away. You are 6ft tall.\n");
     while (true)
     {
         {
@@ -23,15 +23,26 @@ class Program
             Console.Write("On a scale of 1-10 how much power do you want to shoot the ball with?: ");
             double power = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Great! Now from 0 degrees to 90 degrees, at what angle do you want to shoot the ball with?: ");
+            Console.Write("\nGreat! Now from 0 degrees to 90 degrees, at what angle do you want to shoot the ball with?: ");
             double angle = Convert.ToDouble(Console.ReadLine());
 
             double shot = power * angle;
 
                 if (shot >= zTarget - 5 && shot <= zTarget + 5)
             {
-                Console.WriteLine("Nice shot you made it!");
-                break;
+                Console.Write("\nNice shot you made it! Do you want to play again? (yes or no): ");
+                string feedback = Console.ReadLine();
+
+                if (feedback.ToLower() == "no")
+                    {
+                        break;
+                    }
+
+                else if (feedback.ToLower() == "yes")
+                    {
+                        Console.WriteLine($"\n\nThe hoop is {hoopHeight} feet high and {distance} feet away. You are 6ft tall.");
+                        continue;
+                    }
             }
                 else if (shot < zTarget - 5)
             {
