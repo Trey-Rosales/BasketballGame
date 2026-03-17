@@ -6,12 +6,14 @@ class Program
     {
         Random rand = new Random();
         int hoopHeight = rand.Next(8, 13); 
-        int distance = rand.Next(10, 21);
+        int distance = rand.Next(6, 25);
+
+        //10 feet high, 15 feet away, green should be 6 power and 70 degrees.
 
         double x = distance;
         double y = hoopHeight;
 
-        double zTarget = x + 2 * (y - 6);
+        double zTarget = 18.26 * (x + 2 * (y - 6));
 
         Console.WriteLine("\n\nWelcome to the Bespin Basketball Game!\n");
 
@@ -28,7 +30,7 @@ class Program
 
             double shot = power * angle;
 
-                if (shot >= zTarget - 5 && shot <= zTarget + 5)
+                if (shot >= zTarget - 10 && shot <= zTarget + 10)
             {
                 Console.Write("\nNice shot you made it! Do you want to play again? (yes or no): ");
                 string feedback = Console.ReadLine();
