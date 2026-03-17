@@ -7,9 +7,15 @@ class Program
         Random rand = new Random();
         int hoopHeight = rand.Next(8, 13); 
         int distance = rand.Next(10, 21);
+
+        double x = distance;
+        double y = hoopHeight;
+
+        double zTarget = x + 2 * (y - 6);
+
         Console.WriteLine("Welcome to the Bespin Basketball Game!");
 
-        Console.WriteLine($"The hoop is {hoopHeight} feet high and {distance} feet away.");
+        Console.WriteLine($"The hoop is {hoopHeight} feet high and {distance} feet away. You are 6ft tall.");
     while (true)
     {
         {
@@ -20,7 +26,7 @@ class Program
             Console.Write("Great! Now from 0 degrees to 90 degrees, at what angle do you want to shoot the ball with?: ");
             double angle = Convert.ToDouble(Console.ReadLine());
 
-                if (power + angle >= 44 && power + angle <= 62)
+                if (power * angle >= zTarget - 5 && power * angle <= zTarget + 5)
             {
                 Console.WriteLine("Nice shot you made it!");
                 break;
