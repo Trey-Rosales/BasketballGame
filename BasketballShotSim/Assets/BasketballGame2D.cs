@@ -45,16 +45,16 @@ public class BasketballGame2D : MonoBehaviour
     void HandleInput()
     {
         if (Input.GetKey(KeyCode.UpArrow))
-            angle += 40f * Time.deltaTime;
+            angle += 1f * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.DownArrow))
-            angle -= 40f * Time.deltaTime;
+            angle -= 1f * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.RightArrow))
-            power += 5f * Time.deltaTime;
+            power += 1f * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.LeftArrow))
-            power -= 5f * Time.deltaTime;
+            power -= 1f * Time.deltaTime;
 
         power = Mathf.Clamp(power, 1f, 10f);
         angle = Mathf.Clamp(angle, 0f, 90f);
