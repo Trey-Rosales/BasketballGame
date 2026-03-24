@@ -17,6 +17,7 @@ public class BasketballGame2D : MonoBehaviour
     private int score = 0;
     private Vector3 defenderStartPos;
     private float defenderSpeed = 2f;
+    private float defenderHeight = 2f;
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class BasketballGame2D : MonoBehaviour
     {
         HandleInput();
         UpdateUI();
+        MoveDefender();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -97,14 +99,20 @@ public class BasketballGame2D : MonoBehaviour
 
     void ResetDefense()
     {
-        rbDefense.linearVelocity = Vector2.zero;
         rbDefense.angularVelocity = 0f;
-        rbDefense.position = new Vector2(defenderStartPos.x, defenderStartPos.y *);
+        rbDefense.position = defenderStartPos;
         rbDefense.rotation = 0f;
-
     }
 
-
+    void MoveDefender()
+    {
+        float yOffset = Mathf.Sin(Time.time * GetDefenderSpeed()) * defenderHeight;
+        rbDefense.transform.position = new Vector3(
+            defenderStartPos.x,
+            defenderStartPos.y + yOffset,
+            defenderStartPos.z
+        );
+    }
 
     void UpdateUI()
     {
