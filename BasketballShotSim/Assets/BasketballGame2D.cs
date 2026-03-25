@@ -4,6 +4,7 @@ using TMPro;
 public class BasketballGame2D : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Rigidbody2D rbDefense;
     public Transform spawnPoint;
     public Transform hoop;
 
@@ -14,17 +15,22 @@ public class BasketballGame2D : MonoBehaviour
     private float angle = 70f;
 
     private int score = 0;
+    private Vector3 defenderStartPos;
+    private float defenderSpeed = 2f;
+    private float defenderHeight = 2f;
 
     void Start()
     {
         ResetBall();
         UpdateScoreUI();
+        defenderStartPos = rbDefense.transform.position;
     }
 
     void Update()
     {
         HandleInput();
         UpdateUI();
+        MoveDefender();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -40,10 +46,10 @@ public class BasketballGame2D : MonoBehaviour
     void HandleInput()
     {
         if (Input.GetKey(KeyCode.UpArrow))
-            angle += 1f * Time.deltaTime;
+            angle += 3f * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.DownArrow))
-            angle -= 1f * Time.deltaTime;
+            angle -= 3f * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.RightArrow))
             power += 1f * Time.deltaTime;
@@ -82,6 +88,7 @@ public class BasketballGame2D : MonoBehaviour
     void ResetAfterShot()
     {
         ResetBall();
+        ResetDefense();
     }
 
     void ResetBall()
@@ -90,11 +97,35 @@ public class BasketballGame2D : MonoBehaviour
         transform.position = spawnPoint.position;
     }
 
+    void ResetDefense()
+    {
+        rbDefense.angularVelocity = 0f;
+        rbDefense.position = defenderStartPos;
+        rbDefense.rotation = 0f;
+    }
+
+    void MoveDefender()
+    {
+        float yOffset = Mathf.Sin(Time.time * GetDefenderSpeed()) * defenderHeight;
+        rbDefense.transform.position = new Vector3(
+            defenderStartPos.x,
+            defenderStartPos.y + yOffset,
+            defenderStartPos.z
+        );
+    }
+
     void UpdateUI()
     {
         shotText.text =
             $"Power: {power:F1}\n" +
             $"Angle: {angle:F1}";
+    }
+
+    float GetDefenderSpeed() 
+    {
+        float baseSpeed = 2f;
+        float speedUp = 5f;
+        return baseSpeed + (score * speedUp);
     }
 
     void UpdateScoreUI()
