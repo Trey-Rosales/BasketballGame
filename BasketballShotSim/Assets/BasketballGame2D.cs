@@ -46,10 +46,10 @@ public class BasketballGame2D : MonoBehaviour
     void HandleInput()
     {
         if (Input.GetKey(KeyCode.UpArrow))
-            angle += 1f * Time.deltaTime;
+            angle += 3f * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.DownArrow))
-            angle -= 1f * Time.deltaTime;
+            angle -= 3f * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.RightArrow))
             power += 1f * Time.deltaTime;
@@ -124,7 +124,7 @@ public class BasketballGame2D : MonoBehaviour
     float GetDefenderSpeed() 
     {
         float baseSpeed = 2f;
-        float speedUp = 0.5f;
+        float speedUp = 5f;
         return baseSpeed + (score * speedUp);
     }
 
